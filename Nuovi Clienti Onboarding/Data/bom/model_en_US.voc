@@ -1,0 +1,44 @@
+
+# cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation#concept.label = Client Information
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.ClientInformation(java.lang.Long,java.lang.Long,boolean,java.lang.Long)#phrase.navigation = a new {Client Information} where {0, Annual Revenue} {1, Company Age} {2, Defaulted Payment} {3, Number of Employees}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.annualRevenue#phrase.action = set the Annual Revenue of {this} to {Annual Revenue}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.annualRevenue#phrase.addition_setter = add {Annual Revenue} to the Annual Revenue of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.annualRevenue#phrase.navigation = {Annual Revenue} of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.annualRevenue#phrase.subtraction_setter = subtract {Annual Revenue} from the Annual Revenue of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.companyAge#phrase.action = set the Company Age of {this} to {Company Age}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.companyAge#phrase.addition_setter = add {Company Age} to the Company Age of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.companyAge#phrase.navigation = {Company Age} of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.companyAge#phrase.subtraction_setter = subtract {Company Age} from the Company Age of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.action[0] = {this} gets Defaulted Payment only if {Defaulted Payment}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.action[1] = make it {Defaulted Payment} that {this} is Defaulted Payment
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.action[1].deprecated = true
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.navigation = {this} is Defaulted Payment
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.negative_predicate = {this} is not Defaulted Payment
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.negative_predicate_setter = {this} does not get Defaulted Payment
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.defaultedPayment#phrase.positive_predicate_setter = {this} gets Defaulted Payment
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.numberOfEmployees#phrase.action = set the Number of Employees of {this} to {Number of Employees}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.numberOfEmployees#phrase.addition_setter = add {Number of Employees} to the Number of Employees of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.numberOfEmployees#phrase.navigation = {Number of Employees} of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation.numberOfEmployees#phrase.subtraction_setter = subtract {Number of Employees} from the Number of Employees of {this}
+
+# cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest#concept.label = Service Request
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.ServiceRequest(java.lang.String,java.util.List)#phrase.navigation = a new {Service Request} where {0, Industry} {1, Services Requested}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.addTo_servicesRequesteds(cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services)#phrase.action = add {0} to the Services Requesteds of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.clear_servicesRequesteds()#phrase.action = clear the Services Requesteds of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.industry#phrase.action = set the Industry of {this} to {Industry}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.industry#phrase.navigation = {Industry} of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.removeFrom_servicesRequesteds(cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services)#phrase.action = remove {0} from the Services Requesteds of {this}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.servicesRequesteds#phrase.action = set the Services Requesteds of {this} to {Services Requested}
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest.servicesRequesteds#phrase.navigation = {Services Requested} of {this}
+
+# cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services#concept.label = Services
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.finance$CorporateCredit#instance.label = Finance: Corporate Credit
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.finance$FraudProtection#instance.label = Finance: Fraud Protection
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.finance$TaxConsultation#instance.label = Finance: Tax Consultation
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.insurance$LoanInsurance#instance.label = Insurance: Loan Insurance
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.insurance$MedicalInsurance#instance.label = Insurance: Medical Insurance
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.telecom$BusinessDevice#instance.label = Telecom: Business Device
+cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services.telecom$FibreInternet#instance.label = Telecom: Fibre Internet

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>56613705-41c7-4a1c-b4b3-ffb2371a100d</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Client">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation" collection="false" name="Client"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Client" typeRef="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation"/>
+    </inputData>
+    <decision id="node_1" name="Score">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sum">
+                <input bomType="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ClientInformation" collection="false" name="Client"/>
+                <input bomType="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest" collection="false" name="Services"/>
+                <output bomType="java.lang.Long" collection="false" name="Score"/>
+                <rule defaultRule="false" href="node_1/defaulted%20score.drl" kind="BusinessRule" name="defaulted score"/>
+                <rule defaultRule="false" href="node_1/revenue%20score.dmt" kind="DecisionTable" name="revenue score"/>
+                <rule defaultRule="false" href="node_1/size%20score.dmt" kind="DecisionTable" name="size score"/>
+                <rule defaultRule="false" href="node_1/age%20score.dmt" kind="DecisionTable" name="age score"/>
+                <rule defaultRule="false" href="node_1/services%20score.drl" kind="BusinessRule" name="services score"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Score" typeRef="java.lang.Long"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Services">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest" collection="false" name="Services"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Services" typeRef="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest"/>
+    </inputData>
+    <decision id="node_3" name="Score rate">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Long" collection="false" name="Score"/>
+                <output bomType="java.lang.Double" collection="false" name="Score rate"/>
+                <rule defaultRule="false" href="node_3/compute%20rate.dmt" kind="DecisionTable" name="compute rate"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Score rate" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Fee">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.ServiceRequest" collection="false" name="Services"/>
+                <input bomType="java.lang.Double" collection="false" name="Score rate"/>
+                <output bomType="java.lang.Long" collection="false" name="Fee"/>
+                <rule defaultRule="false" href="node_5/Default%20service%20fees.dmt" kind="DecisionTable" name="Default service fees"/>
+                <rule defaultRule="false" href="node_5/apply%20score%20rate.drl" kind="BusinessRule" name="apply score rate"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Fee" typeRef="java.lang.Long"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

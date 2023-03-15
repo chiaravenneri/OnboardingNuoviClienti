@@ -1,0 +1,108 @@
+
+package cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data;
+
+
+public class ClientInformation
+        property "ads.typeId" "4"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "ClientInformation"
+        property "de.generated" "true"
+{
+    public java.lang.Long annualRevenue
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "AnnualRevenue"
+                property update "true";
+    public java.lang.Long companyAge
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "CompanyAge"
+                property update "true";
+    public boolean defaultedPayment
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "DefaultedPayment"
+                property update "true";
+    public java.lang.Long numberOfEmployees
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "NumberOfEmployees"
+                property update "true";
+    public ClientInformation(java.lang.Long annualRevenue, java.lang.Long companyAge, boolean defaultedPayment, java.lang.Long numberOfEmployees)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public ClientInformation()
+                property "dataio.default" "true";
+}
+
+public class ServiceRequest
+        property "ads.typeId" "2"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "ServiceRequest"
+        property "de.generated" "true"
+{
+    public string industry
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Industry"
+                property update "true";
+    public java.util.List servicesRequesteds domain 0,* class cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "ServicesRequesteds"
+                property update "true";
+    public ServiceRequest(string industry, 
+        java.util.List servicesRequesteds domain 0,* class cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public ServiceRequest()
+                property "dataio.default" "true";
+    public void addTo_servicesRequesteds(cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services servicesRequesteds)
+                property collectionAttribute "servicesRequesteds"
+                property update "true";
+    public void clear_servicesRequesteds()
+                property collectionAttribute "servicesRequesteds"
+                property update "true";
+    public void removeFrom_servicesRequesteds(cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services servicesRequesteds)
+                property collectionAttribute "servicesRequesteds"
+                property update "true";
+    public void set_servicesRequesteds(java.util.Collection servicesRequesteds domain 0,* class cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services)
+                property collectionAttribute "servicesRequesteds"
+                property update "true";
+}
+
+public class Services
+        extends java.lang.Enum
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Services"
+        property "de.generated" "true"
+{
+    domain 
+    {
+        static finance$CorporateCredit,
+        static finance$FraudProtection,
+        static finance$TaxConsultation,
+        static insurance$LoanInsurance,
+        static insurance$MedicalInsurance,
+        static telecom$BusinessDevice,
+        static telecom$FibreInternet
+    }
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services finance$CorporateCredit
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Finance:CorporateCredit";
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services finance$FraudProtection
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Finance:FraudProtection";
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services finance$TaxConsultation
+                property "ads.attributeId" "7"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Finance:TaxConsultation";
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services insurance$LoanInsurance
+                property "ads.attributeId" "5"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Insurance:LoanInsurance";
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services insurance$MedicalInsurance
+                property "ads.attributeId" "6"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Insurance:MedicalInsurance";
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services telecom$BusinessDevice
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Telecom:BusinessDevice";
+    public static final readonly cp4admin.onboarding_nuovi_clienti.nuovi_clienti_onboarding.data.Services telecom$FibreInternet
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Telecom:FibreInternet";
+}
+
